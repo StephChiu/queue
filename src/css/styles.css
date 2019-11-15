@@ -5,6 +5,19 @@
     height: 100%;
     width: 100%;
   }
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+
+.logo {
+    height: 22px;
+    width: 22px;
+}
+
 .navbar {
     /* position: absolute;
     top: 0; */
@@ -12,6 +25,8 @@
     font-size: 12px;
     font-family: 'Raleway', sans-serif;
     font-weight: 800;
+    position: fixed;
+    overflow: hidden;
 }
 
 .align-v {
@@ -31,6 +46,8 @@ span.brand {
 .navbar-toggler {
     height: 30px;
     width: 30px;
+    display: flex;
+    justify-content: center;
 }
 .fd-row {
     flex-direction: row;
@@ -42,7 +59,10 @@ span.brand {
 .flex {
     display: flex;
 }
-.f-col {
+.j-center {
+    justify-content: center;
+}
+.fd-col {
     flex-direction: column;
 }
 
@@ -78,7 +98,33 @@ span.brand {
 .btn {
     font-size: 20px;
 }
-/* .btn {
-    height: 14px;
-    width: 24px;
-} */
+
+/* favorites component */
+
+.favorites-container h2 {
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
+
+.fixed {
+    margin-top:60px;
+    position: fixed;
+    z-index: 2px;
+}
+
+.new-map {
+    position: absolute;
+    top: 200px;
+}
+
+.search-bar {
+    z-index: 2;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
