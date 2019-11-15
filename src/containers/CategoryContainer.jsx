@@ -60,7 +60,7 @@ class CategoryContainer extends Component {
   if (this.props.categoryPage) {
     console.log('length of thissss', this.props.categoryPage)
     // console.log('yoooooooooooooooooo', searchDisplayResults)
-    // console.log("testtttttttttttttttingggg", this.props.searchResults)
+    console.log("testtttttttttttttttingggg", this.props.searchResults)
     search =  
     <div id="category-body">
       <SearchDisplay

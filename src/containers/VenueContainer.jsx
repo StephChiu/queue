@@ -5,13 +5,27 @@ import MessageBoard from '../components/MessageBoard.jsx';
 import '../css/VenuePage.css'
 import VenueMap from '../components/VenueMap.jsx'
 import Button from 'react-bootstrap/Button';
+// const yelp = require('yelp-fusion');
+const yelpAPI = require('yelp-api')
+// const client = yelp.client('eRxKmGj27YLORDOGy6EYIyECcViswJMborZf40yUgKOrrYIEexc2vmioWAa9-enerVRZOVdInpNqgxM3j1deCuRnbh9iHb9F8gol79USiFzNu0nRyW8J-IISFaXNXXYx')
 
 
 const VenueContainer = (props) => {
+  const YELP_API = '0asdq3RZT2Kcg24r5KLnY49GRgND03gI53KjmnXTaFEsPoe8YaSyyhVNciXqh2GGLrV1i7X79sBWjkWw_NhhMeG9GSOOylFrRXxnFSZuLxQvDj-5bOzL1JsZ-UbGXXYx'
+  let yelp = new yelpAPI(YELP_API)
+  yelp.query(`business/search${props.venueId}`, [{locale: 'en_US'}])
+  .then(data =>{
+    console.log(data)
+  })
+
+
+
+
+
 
   
   // render map and wait times
-  console.log('props in venucontainer', props.searchResults)
+  console.log('props in venucontainer', props.venueId)
   return (
     <div>
       <section className="search-bar">
@@ -29,6 +43,7 @@ const VenueContainer = (props) => {
             venueImage={props.venueImage}
             venueLocation={props.venueLocation}
             venuePhone={props.venuePhone}
+            venueId={props.venueId}
           />
 
           <WaitTimesDisplay 
@@ -46,17 +61,11 @@ const VenueContainer = (props) => {
             StoresInfo = {props.searchResults}
             latitude={props.latitude} 
             longitude={props.longitude}
-
           />
-            
-
         </div>
 
         <br />
         <MessageBoard venue={props.venueId} />
-
-
-
       </div>
     </div>
   )
